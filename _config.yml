@@ -1,0 +1,65 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Deleted in 2020
+email: vgdsubmissions@gmail.com
+description: >- # this means to ignore newlines until "baseurl:" Add your site description here in the _config.yml file. It will appear in your document head meta (for Google search results) and title of the website (in browser tabs).
+  Online exhibition of creator submitted images that were deleted from Instagram in 2020.
+baseurl: "/deleted2020" # the subpath of your site, e.g. /blog. leave blank if this is your main github pages repository
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+# Build settings
+remote_theme: jirrian/jekyll-theme-image-grid@main
+
+# generate social links in footer
+social_links:
+  twitter: vgddotcom
+  github: virtualgoodsdealer
+  # facebook: jekyll
+  instagram: virtualgoodsdealer
+  # linkedin: jekyll
+  # pinterest: jekyll
+  # youtube: jekyll
+  # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+  # youtube_channel_name: CloudCannon
+
+  # Mastodon instances
+  # mastodon:
+  # - username: jekyll
+  #   instance: example.com
+  # - username: jekyll2
+  #   instance: example.com
+
+# settings for image grid homepage
+grid_settings:
+  show_all_images: true #true - displays all images in grid page, false - only show first (file name of image sorted alphabetically) image of post in grid page
+  display: square-cropped #square-cropped - images displayed in square grid and cropped, #square-og - images displayed in square grid and with original aspect ratio, masonry - images displayed in original aspect ratio but staggered (please note this will display the images in top to bottom order instead of left to right)
+
+# settings for post pages
+post_settings:
+  show_title: true #true - shows title of post (post filename or title in front matter of post file), false - does not show title of post. this settings can be overwritten in the frontmatter of individual post files with the show_title variable.
+  show_date: true #true - shows date of post (from post filename), false - does not show date of post
+
+plugins:
+  - jekyll-seo-tag
+
+include:
+  - _images

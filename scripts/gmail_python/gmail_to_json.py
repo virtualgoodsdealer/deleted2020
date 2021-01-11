@@ -14,8 +14,8 @@ detach_dir = '.'
 if 'attachments' not in os.listdir(detach_dir):
     os.mkdir('attachments')
 
-userName = 'vgdsubmissions'
-passwd = 'V!rtualstudi09'
+userName = 'USERNAME'
+passwd = 'PASSWORD'
 
 # try:
 imapSession = imaplib.IMAP4_SSL('imap.gmail.com')

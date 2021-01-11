@@ -1,6 +1,6 @@
 # Deleted 2020
 
-`/scripts` folder - holds python scripts and their outputs for pulling data from gmail and generating markdown post files
+`scripts` folder - holds python scripts and their outputs for pulling data from gmail and generating markdown post files
 
 `_data` folder - json file for displaying post images
 

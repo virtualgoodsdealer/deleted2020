@@ -16,8 +16,10 @@ layout: default
 
 	</div>
 	{% assign content = site.data.post_dictionary[post_id]['description'] | markdownify %}
+
 	<!-- if there is post content -->
-	{% if content != "" %}
+	{% assign content_strip = content | strip_newlines %}
+	{% if content_strip != "" %}
 	<div class="col-lg-6 col-md-6 col-">
 		<div class="post-text-container">
 			{% if site.post_settings.show_title and page.show_title != false %}

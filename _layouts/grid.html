@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div class="grid">
+	{% if site.grid_settings.display == "masonry" %}
+		<div class='card-columns'>
+	{% elsif site.grid_settings.display == "square-cropped" or site.grid_settings.display == "square-og" %}
+		<div class='row'>
+	{% endif %}
+	    {% for post in site.posts %}
+	    	{% assign post_id = post.path | split: "." | first | remove_first: "_posts/2020-12-31-" | remove: ".md" %}
+
+	    	{% assign post_images_array = site.data.post_dictionary[post_id]['images'] %}
+				
+			{% for post_image in post_images_array %}
+				{% assign post_image_path = "assets/post_images/" | append: post_image | relative_url %}
+				{% if site.grid_settings.display == "masonry" %}
+					<div class="card grid-masonry">
+						<a href="{{ post.url | relative_url }}"><img src="{{ post_image_path }}" class="img-fluid" alt="{{ post.title }}"></a>
+					</div>
+				{% elsif site.grid_settings.display == "square-cropped" or site.grid_settings.display == "square-og" %}
+					<div class='col-sm-4 col- p-0'>
+						<div class="image-container">
+							<a href="{{ post.url | relative_url }}">
+								{% if site.grid_settings.display == "square-cropped" %}
+									<img src="{{ post_image.path | relative_url }}" class="img-fluid" alt="{{ post.title }}">
+								{% elsif site.grid_settings.display == "square-og" %}
+									<img src="{{ post_image.path | relative_url }}" class="img-fluid grid-square-og" alt="{{ post.title }}">
+								{% endif %}
+							</a>
+						</div>
+					</div>
+				{% endif %}
+				{% if site.grid_settings.show_all_images == false %}
+					{% break %}
+				{% endif %}
+			{% endfor %}
+
+	    {% endfor %}
+	</div>
+</div>

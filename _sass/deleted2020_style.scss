@@ -6,10 +6,18 @@ body {
 	width: 3em;
 }
 
-.coming-soon{
-	
+.coming-soon a{
+	color: black;
+}
+
+.coming-soon .btn-group-lg>.btn, .btn-lg {
+	border-radius: 0px;
 }
 
 .navbar-light .navbar-brand{
 	color: black;
+}
+
+.cw{
+	color: gray;
 }

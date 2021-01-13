@@ -57,3 +57,18 @@ body {
 	  	column-count: 3;
 	}
 }
+
+.open-quote{
+	font-size: 6rem;
+	line-height: 0;
+	padding-top: 1.5rem;
+	color: lightgray;
+}
+
+.end-quote{
+	font-size: 6rem;
+	line-height: 0;
+	padding-top: 1.5rem;
+	color: lightgray;
+	float: right;
+}

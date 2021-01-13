@@ -30,13 +30,19 @@ layout: default
 			{% if site.post_settings.show_date == true %}
 				<div class="post-date">{{ page.date | date: '%d %B %Y' }}</div>
 			{% endif %}
-			<div class="post-content">{{ content }}</div>
+			<div class="post-content">
+				<div class="open-quote">&#8220;</div>
+				<div class="container">
+					{{ content }}
+				</div>
+				<div class="end-quote">&#8221;</div>
+			</div>
 		</div>
 	</div>
 	{% endif %}
 </div>
 <!-- if there is no post content but a post title -->
-{% if content == "" %}
+{% if content_strip == "" %}
 	<div class="row justify-content-center">
 		<div class="col-lg-6 col-md-6 col-">
 			<div class="post-text-container">

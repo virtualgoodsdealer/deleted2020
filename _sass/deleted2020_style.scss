@@ -6,10 +6,69 @@ body {
 	width: 3em;
 }
 
-.coming-soon{
-	
+.landing-logo img{
+	width: 5em;
 }
+
+.landing-button .btn-group-lg>.btn, .btn-lg {
+	border-radius: 0px;
+}
+
+.landing-title{
+	font-size: 2rem;
+}
+
+.landing-cw{
+	color: gray;
+}
+
 
 .navbar-light .navbar-brand{
 	color: black;
+}
+
+.navbar-light .navbar-toggler {
+	border: none;
+	padding: 0px;
+}
+
+.form-control{
+	border-radius: 0px;
+}
+
+.btn{
+	border-radius: 0px;
+}
+
+@media (max-width: 576px){
+	.card-columns {
+	  	column-count: 2;
+	}
+}
+
+@media (min-width: 576px){
+	.card-columns {
+	  	column-count: 2;
+	}
+}
+
+@media (min-width: 768px){
+	.card-columns {
+	  	column-count: 3;
+	}
+}
+
+.open-quote{
+	font-size: 6rem;
+	line-height: 0;
+	padding-top: 1.5rem;
+	color: lightgray;
+}
+
+.end-quote{
+	font-size: 6rem;
+	line-height: 0;
+	padding-top: 1.5rem;
+	color: lightgray;
+	float: right;
 }

@@ -1,0 +1,23 @@
+<header class='header'>
+		<nav class="navbar sticky-top navbar-expand-lg navbar-light">
+			<div class="container"><!-- remove this container class for a full width nav bar -->
+				<a class="navbar-brand" href="{{ '/images/' | relative_url }}">{{ site.title | escape }}</a>
+				{% if site.pages.size > 0 %}
+				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarNav">
+				    <div class="navbar-nav ml-auto">
+					    	{% for page in site.pages %}
+						      {% if page.title and page.name != "404.md" %}
+						      	<li>
+						      		<a class="nav-item nav-link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+						      	</li>
+						      {% endif %}
+						    {% endfor %}
+				    </div>
+				  </div>
+				{% endif %}
+			</div>
+		</nav>
+</header>

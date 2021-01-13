@@ -6,10 +6,24 @@ body {
 	width: 3em;
 }
 
-.coming-soon{
-	
+.landing-logo img{
+	width: 5em;
 }
+
+.landing-button .btn-group-lg>.btn, .btn-lg {
+	border-radius: 0px;
+}
+
+.landing-title{
+	font-size: 2rem;
+}
+
+.landing-cw{
+	color: gray;
+}
+
 
 .navbar-light .navbar-brand{
 	color: black;
 }
+

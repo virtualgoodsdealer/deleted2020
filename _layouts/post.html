@@ -39,7 +39,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		{% for post_image in post_images_array %}
 			{% assign post_image_path = "assets/post_images/" | append: post_image | relative_url %}
 			{% assign post_imagethumb_path = "assets/post_thumbnails/" | append: post_image | relative_url %}
-			<img src="{{ post_imagethumb_path }}" data-src="{{ post_image_path }}" class="img-fluid lazy w-100" alt="{{ page.title }}">
+
+			{% assign post_image_fileext = post_image | slice: -3, 3 %}
+				{% if post_image_fileext == "mp4" %}
+					<video class="video-fluid" autoplay loop controls playsinline>
+				      	<source src="{{ post_image_path }}" type="video/mp4" />
+				    </video>
+				{% else %}
+					<img src="{{ post_imagethumb_path }}" data-src="{{ post_image_path }}" class="img-fluid lazy w-100" alt="{{ page.title }}">
+				{% endif %}
 		{% endfor %}
 
 	</div>

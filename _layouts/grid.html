@@ -44,8 +44,16 @@ document.addEventListener("DOMContentLoaded", function() {
 				{% assign post_imagethumb_path = "assets/post_thumbnails/" | append: post_image | relative_url %}
 				{% if site.grid_settings.display == "masonry" %}
 					<div class="card grid-masonry">
-						<a href="{{ post.url | relative_url }}"><img src="{{ post_imagethumb_path }}" data-src="{{ post_image_path }}" class="img-fluid lazy w-100" alt="{{ post.title }}"></a>
+						{% assign post_image_fileext = post_image | slice: -3, 3 %}
+						{% if post_image_fileext == "mov" or post_image_fileext == "mp4" %}
+							<a href="{{ post.url | relative_url }}"><video class="video-fluid" autoplay muted loop playsinline>
+				      			<source src="{{ post_image_path }}" type="video/mp4" />
+				    		</video></a>
+						{% else %}
+							<a href="{{ post.url | relative_url }}"><img src="{{ post_imagethumb_path }}" data-src="{{ post_image_path }}" class="img-fluid lazy w-100" alt="{{ post.title }}"></a>
+						{% endif %}
 					</div>
+
 				{% elsif site.grid_settings.display == "square-cropped" or site.grid_settings.display == "square-og" %}
 					<div class='col-sm-4 col- p-0'>
 						<div class="image-container">

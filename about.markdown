@@ -1,23 +1,4 @@
 ---
-<<<<<<< HEAD
-layout: page
-title: About
-permalink: /about/
----
-
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
-=======
 layout: about
 title: About
 permalink: /about/
@@ -50,4 +31,3 @@ Since we did not include a list of requirements in this open call, we chose to i
 #### Future Goals
 
 We do not believe this exhibit is an accurate representation of the people whose voices are most marginalized by big tech platforms. The data set for this exhibit was heavily influenced by the people who chose to participate in our open call. In the future, we will work to proactively reach a more diverse audience through our open calls.
->>>>>>> exhibit3

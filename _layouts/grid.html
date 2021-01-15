@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				{% if site.grid_settings.display == "masonry" %}
 					<div class="card grid-masonry">
 						{% assign post_image_fileext = post_image | slice: -3, 3 %}
-						{% if post_image_fileext == "mov" or post_image_fileext == "mp4" %}
+						{% if post_image_fileext == "mp4" %}
 							<a href="{{ post.url | relative_url }}"><video class="video-fluid" autoplay muted loop playsinline>
 				      			<source src="{{ post_image_path }}" type="video/mp4" />
 				    		</video></a>

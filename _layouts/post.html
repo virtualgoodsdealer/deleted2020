@@ -1,0 +1,97 @@
+---
+layout: default
+---
+<script>
+// lazy loading images https://web.dev/lazy-loading-images/
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          //lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    // Possibly fall back to event handlers here
+  }
+});
+</script>
+
+<div class="post">
+<div class="row justify-content-center">
+	<div class="col-lg-6 col-md-6 col-">
+
+		{% assign post_id = page.path | split: "." | first | remove_first: "_posts/2020-12-31-" | remove: ".md" %}
+
+	    {% assign post_images_array = site.data.post_dictionary[post_id]['images'] %}
+				
+		{% for post_image in post_images_array %}
+			{% assign post_image_path = "assets/post_images/" | append: post_image | relative_url %}
+			{% assign post_imagethumb_path = "assets/post_thumbnails/" | append: post_image | relative_url %}
+
+			{% assign post_image_fileext = post_image | slice: -3, 3 %}
+				{% if post_image_fileext == "mp4" %}
+					<video class="video-fluid" autoplay loop controls playsinline>
+				      	<source src="{{ post_image_path }}" type="video/mp4" />
+				    </video>
+				{% else %}
+					<img src="{{ post_imagethumb_path }}" data-src="{{ post_image_path }}" class="img-fluid lazy w-100" alt="{{ page.title }}">
+				{% endif %}
+		{% endfor %}
+
+	</div>
+	{% assign content = site.data.post_dictionary[post_id]['description'] | markdownify %}
+
+	<!-- if there is post content -->
+	{% assign content_strip = content | strip_newlines %}
+	{% if content_strip != "" %}
+	<div class="col-lg-6 col-md-6 col-">
+		<div class="post-text-container">
+			{% if site.post_settings.show_title and page.show_title != false %}
+				<div class="post-title">{{ page.title }}</div>
+			{% elsif site.post_settings.show_title == false and page.show_title %}
+				<div class="post-title">{{ page.title }}</div>
+			{% endif %}
+			{% if site.post_settings.show_date == true %}
+				<div class="post-date">{{ page.date | date: '%d %B %Y' }}</div>
+			{% endif %}
+			<div class="post-content">
+				<div class="open-quote">&#8220;</div>
+				<div class="container post-content-text">
+					{{ content }}
+				</div>
+				<div class="end-quote">&#8221;</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+</div>
+<!-- if there is no post content but a post title -->
+{% if content_strip == "" %}
+	<div class="row justify-content-center">
+		<div class="col-lg-6 col-md-6 col-">
+			<div class="post-text-container">
+				{% if site.post_settings.show_title and page.show_title != false %}
+					<div class="post-title">{{ page.title }}</div>
+				{% elsif site.post_settings.show_title == false and page.show_title %}
+					<div class="post-title">{{ page.title }}</div>
+				{% endif %}
+				{% if site.post_settings.show_date == true %}
+					<div class="post-date">{{ page.date | date: '%d %B %Y' }}</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endif %}
+</div>

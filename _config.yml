@@ -25,6 +25,8 @@ description: >- # this means to ignore newlines until "baseurl:" Add your site d
 baseurl: "/deleted2020" # the subpath of your site, e.g. /blog. leave blank if this is your main github pages repository
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
+#permalink style for posts
+permalink: /images/:title/
 
 # Build settings
 remote_theme: jirrian/jekyll-theme-image-grid@main
@@ -51,12 +53,12 @@ social_links:
 # settings for image grid homepage
 grid_settings:
   show_all_images: true #true - displays all images in grid page, false - only show first (file name of image sorted alphabetically) image of post in grid page
-  display: square-cropped #square-cropped - images displayed in square grid and cropped, #square-og - images displayed in square grid and with original aspect ratio, masonry - images displayed in original aspect ratio but staggered (please note this will display the images in top to bottom order instead of left to right)
+  display: masonry #square-cropped - images displayed in square grid and cropped, #square-og - images displayed in square grid and with original aspect ratio, masonry - images displayed in original aspect ratio but staggered (please note this will display the images in top to bottom order instead of left to right)
 
 # settings for post pages
 post_settings:
-  show_title: true #true - shows title of post (post filename or title in front matter of post file), false - does not show title of post. this settings can be overwritten in the frontmatter of individual post files with the show_title variable.
-  show_date: true #true - shows date of post (from post filename), false - does not show date of post
+  show_title: false #true - shows title of post (post filename or title in front matter of post file), false - does not show title of post. this settings can be overwritten in the frontmatter of individual post files with the show_title variable.
+  show_date: false #true - shows date of post (from post filename), false - does not show date of post
 
 plugins:
   - jekyll-seo-tag

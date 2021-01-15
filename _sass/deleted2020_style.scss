@@ -1,0 +1,105 @@
+body {
+	font-family: "Times New Roman", Times, serif;
+}
+
+.coming-soon img{
+	width: 3em;
+}
+
+.landing-logo img{
+	width: 5em;
+}
+
+.landing-button .btn-group-lg>.btn, .btn-lg {
+	border-radius: 0px;
+}
+
+.landing-title{
+	font-size: 2rem;
+}
+
+.landing-cw{
+	color: gray;
+}
+
+
+.navbar-light .navbar-brand{
+	color: black;
+}
+
+.navbar-light .navbar-toggler {
+	border: none;
+	padding: 0px;
+}
+
+.form-control{
+	border-radius: 0px;
+}
+
+.btn{
+	border-radius: 0px;
+}
+
+@media (max-width: 576px){
+	.card-columns {
+	  	column-count: 2;
+	}
+}
+
+@media (min-width: 576px){
+	.card-columns {
+	  	column-count: 2;
+	}
+}
+
+@media (min-width: 768px){
+	.card-columns {
+	  	column-count: 3;
+	}
+}
+
+.open-quote{
+	font-size: 6rem;
+	line-height: 0;
+	padding-top: 1.5rem;
+	color: lightgray;
+}
+
+.end-quote{
+	font-size: 6rem;
+	line-height: 0;
+	padding-top: 1.5rem;
+	color: lightgray;
+	float: right;
+}
+
+.video-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.svg-icon{
+	margin-top: 4px;
+}
+
+.footer-link a{
+	color: silver;
+	text-decoration: none;
+}
+
+.post-content-text{
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.page-title { 
+	font-size: 2em;
+	color: gray;
+	margin-bottom: 0.5em;
+	text-align: center; 
+}
+
+.h4, h4 {
+	font-size: 1.5rem;
+	text-align: center;
+}

@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+// post images in random order
 document.addEventListener("DOMContentLoaded", function() {
-
-	var myList = document.querySelector('.card-columns');
-	for (var i = myList.children.length; i >= 0; i--) {
-    	myList.appendChild(myList.children[Math.random() * i | 0]);
+	var images = document.querySelector('.card-columns');
+	for (var i = images.children.length; i >= 0; i--) {
+    	images.appendChild(images.children[Math.random() * i | 0]);
 	}
 });
 

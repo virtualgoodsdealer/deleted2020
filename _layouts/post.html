@@ -1,6 +1,33 @@
 ---
 layout: default
 ---
+<script>
+// lazy loading images https://web.dev/lazy-loading-images/
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          //lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    // Possibly fall back to event handlers here
+  }
+});
+</script>
+
 <div class="post">
 <div class="row justify-content-center">
 	<div class="col-lg-6 col-md-6 col-">
@@ -11,7 +38,8 @@ layout: default
 				
 		{% for post_image in post_images_array %}
 			{% assign post_image_path = "assets/post_images/" | append: post_image | relative_url %}
-			<img src="{{ post_image_path }}" class="img-fluid" alt="{{ page.title }}">
+			{% assign post_imagethumb_path = "assets/post_thumbnails/" | append: post_image | relative_url %}
+			<img src="{{ post_imagethumb_path }}" data-src="{{ post_image_path }}" class="img-fluid lazy w-100" alt="{{ page.title }}">
 		{% endfor %}
 
 	</div>

@@ -26,6 +26,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // Possibly fall back to event handlers here
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+
+	var myList = document.querySelector('.card-columns');
+	for (var i = myList.children.length; i >= 0; i--) {
+    	myList.appendChild(myList.children[Math.random() * i | 0]);
+	}
+});
+
+
 </script>
 
 <div class="grid">

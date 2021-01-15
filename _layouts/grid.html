@@ -26,6 +26,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // Possibly fall back to event handlers here
   }
 });
+
+// post images in random order
+document.addEventListener("DOMContentLoaded", function() {
+	var images = document.querySelector('.card-columns');
+	for (var i = images.children.length; i >= 0; i--) {
+    	images.appendChild(images.children[Math.random() * i | 0]);
+	}
+});
+
+
 </script>
 
 <div class="grid">
